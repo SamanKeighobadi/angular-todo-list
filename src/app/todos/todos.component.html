@@ -1,11 +1,12 @@
 <div class="flex justify-center items-center flex-col pt-4">
   <div *ngFor="let todo of todos" class="bg-gray-100 rounded-md w-96 p-3 m-2">
-    <div>
+    <div class="flex  justify-between">
       <div class="font-semibold text-gray-700">
         {{ todo.title }}
       </div>
       <div>
-        
+          <fa-icon [icon]="editIcon" class="text-blue-700 cursor-pointer"> </fa-icon>
+          <fa-icon [icon]="trashIcon" class="text-red-700 ml-2 cursor-pointer"></fa-icon>
       </div>
     </div>
   </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faCoffee,faTrash,faEdit } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'todos',
@@ -11,4 +12,7 @@ export class TodosComponent {
     {id:2,title:"read book",completed:false},
     {id:3,title:"coding",completed:false},
   ]
+  faCoffe = faCoffee
+  trashIcon=faTrash;
+  editIcon = faEdit;
 }
