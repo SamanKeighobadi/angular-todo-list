@@ -4,17 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AddNewTodoComponent } from './add-new-todo/add-new-todo.component';
 import { TodosComponent } from './todos/todos.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TodoComponent } from './todo/todo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddNewTodoComponent,
-    TodosComponent
+    TodosComponent,
+    TodoComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, FontAwesomeModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
