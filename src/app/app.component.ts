@@ -17,4 +17,9 @@ export class AppComponent {
   addNewTodo(todo: ITodo) {
     this.todos.push(todo);
   }
+
+  removeTodo(todoId:number){
+    const filteredTodo = this.todos.filter(todo => todo.id !== todoId)
+    this.todos = filteredTodo;
+  }
 }

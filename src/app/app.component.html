@@ -2,5 +2,5 @@
   <add-new-todo (addTodo)="addNewTodo($event)" ></add-new-todo>
 </div>
 <div class="bg-rose-600 h-96">
-  <todos [todos]="todos"></todos>
+  <todos (deleteTodo)="removeTodo($event)" [todos]="todos"></todos>
 </div>

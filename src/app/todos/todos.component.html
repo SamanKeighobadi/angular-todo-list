@@ -6,7 +6,7 @@
       </div>
       <div>
           <fa-icon [icon]="editIcon" class="text-blue-700 cursor-pointer"> </fa-icon>
-          <fa-icon [icon]="trashIcon" class="text-red-700 ml-2 cursor-pointer"></fa-icon>
+          <fa-icon (click)="handleDeleteTodo(todo.id)" [icon]="trashIcon" class="text-red-700 ml-2 cursor-pointer"></fa-icon>
       </div>
     </div>
   </div>
