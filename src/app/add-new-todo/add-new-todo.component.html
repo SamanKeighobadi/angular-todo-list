@@ -1,3 +1,10 @@
-<div>
-    <input type="text" class="border p-1 rounded-sm w-96" placeholder="todo...">
-</div>
+<form (submit)="onSubmit()">
+  <input
+    type="text"
+    class="border p-1 px-2 rounded-md py-2 w-[450px]"
+    placeholder="todo..."
+    [(ngModel)]="todoText"
+    name="todo"
+  />
+  <button type="submit" class="bg-rose-800 text-white ml-2 p-2 rounded-md">add todo</button>
+</form>
