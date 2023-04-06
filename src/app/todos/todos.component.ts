@@ -1,5 +1,5 @@
 import { Component, Input,Output,EventEmitter } from '@angular/core';
-import { faCoffee, faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee, faTrash, faEdit, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 interface ITodo {
   title: string;
@@ -16,9 +16,14 @@ export class TodosComponent {
   @Input() todos: ITodo[];
 
   @Output() deleteTodo: EventEmitter<number> = new EventEmitter<number>();
+  @Output() completeTodo : EventEmitter<number> =  new EventEmitter<number>();
 
   handleDeleteTodo(todoId:number){
     this.deleteTodo.emit(todoId)
+  }
+
+  handleCompleteTodo(todoId:number){
+      this.completeTodo.emit(todoId)
   }
 
   constructor() {
@@ -28,4 +33,5 @@ export class TodosComponent {
   faCoffe = faCoffee;
   trashIcon = faTrash;
   editIcon = faEdit;
+  doneIcon = faCheckCircle;
 }

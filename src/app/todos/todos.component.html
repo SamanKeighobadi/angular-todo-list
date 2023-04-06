@@ -1,12 +1,25 @@
 <div class="flex justify-center items-center flex-col pt-4">
-  <div *ngFor="let todo of todos" class="bg-gray-100 rounded-md w-96 p-3 m-2">
-    <div class="flex  justify-between">
-      <div class="font-semibold text-gray-700">
+  <div
+    *ngFor="let todo of todos"
+    class="bg-gray-100 rounded-md w-[430px] p-3 m-2"
+  >
+    <div class="flex justify-between">
+      <div class="font-semibold text-gray-700" [ngClass]="{'line-through':todo.completed}">
         {{ todo.title }}
       </div>
       <div>
-          <fa-icon [icon]="editIcon" class="text-blue-700 cursor-pointer"> </fa-icon>
-          <fa-icon (click)="handleDeleteTodo(todo.id)" [icon]="trashIcon" class="text-red-700 ml-2 cursor-pointer"></fa-icon>
+        <fa-icon [icon]="editIcon" class="text-blue-700 cursor-pointer">
+        </fa-icon>
+        <fa-icon
+          (click)="handleDeleteTodo(todo.id)"
+          [icon]="trashIcon"
+          class="text-red-700 mx-2 cursor-pointer"
+        ></fa-icon>
+        <fa-icon
+          (click)="handleCompleteTodo(todo.id)"
+          [icon]="doneIcon"
+          class="text-green-600 cursor-pointer"
+        ></fa-icon>
       </div>
     </div>
   </div>
