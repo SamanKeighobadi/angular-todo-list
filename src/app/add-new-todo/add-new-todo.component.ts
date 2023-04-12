@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { TodoService } from '../services/todo.service';
 
 interface ITodo {
   title: string;
@@ -10,13 +11,13 @@ interface ITodo {
   selector: 'add-new-todo',
   templateUrl: './add-new-todo.component.html',
   styleUrls: ['./add-new-todo.component.css'],
+
 })
 export class AddNewTodoComponent {
   todoText: string;
 
-  @Output() addTodo: EventEmitter<ITodo> = new EventEmitter<ITodo>();
 
-  constructor() {
+  constructor(private todoService:TodoService) {
     this.todoText = '';
   }
 
@@ -27,7 +28,7 @@ export class AddNewTodoComponent {
         title: this.todoText,
         completed: false,
       };
-      this.addTodo.emit(newTodo);
+      this.todoService.addNewTodo(newTodo)
       this.todoText = '';
     }
   }

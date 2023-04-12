@@ -8,6 +8,8 @@ import { TodosComponent } from './todos/todos.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TodoComponent } from './todo/todo.component';
 import { EditTodoComponent } from './edit-todo/edit-todo.component';
+// services
+import { TodoService } from './services/todo.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { EditTodoComponent } from './edit-todo/edit-todo.component';
     EditTodoComponent,
   ],
   imports: [BrowserModule, FontAwesomeModule, FormsModule],
-  providers: [],
+  providers: [TodoService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

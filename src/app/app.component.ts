@@ -11,7 +11,6 @@ interface ITodo {
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [TodoService],
 })
 export class AppComponent implements OnInit {
   todos: ITodo[] = [];

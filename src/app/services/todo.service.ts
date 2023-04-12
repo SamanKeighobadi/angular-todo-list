@@ -3,12 +3,25 @@
 // @Injectable({
 //   providedIn: 'root'
 // })
+
+interface ITodo {
+  title: string;
+  id: number;
+  completed: boolean;
+}
+
 export class TodoService {
   todos = [{ id: 1, title: 'new todo', completed: false }];
+
+  constructor() {}  
 
   getTodos() {
     return this.todos;
   }
 
-  constructor() {}
+  addNewTodo(todo: ITodo) {
+    this.todos.push(todo);
+  }
+
+ 
 }
