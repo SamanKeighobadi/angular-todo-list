@@ -4,11 +4,29 @@
     class="bg-gray-100 rounded-md w-[430px] p-3 m-2"
   >
     <div class="flex justify-between">
-      <div class="font-semibold text-gray-700" [ngClass]="{'line-through':todo.completed}">
+      <div
+        *ngIf="!editStatus; else editTodo"
+        class="font-semibold text-gray-700"
+        [ngClass]="{ 'line-through': todo.completed }"
+      >
         {{ todo.title }}
       </div>
+      <ng-template #editTodo>
+        <input
+          type="text"
+          class="bg-gray-300 p-1 rounded-md"
+          (change)="editHandler()"
+          [value]="todo.title"
+          
+          [(ngModel)]="editedTodoTitle "
+        />
+      </ng-template>
       <div>
-        <fa-icon [icon]="editIcon" class="text-blue-700 cursor-pointer">
+        <fa-icon
+          [icon]="editIcon"
+          (click)="editStatus = true"
+          class="text-blue-700 cursor-pointer"
+        >
         </fa-icon>
         <fa-icon
           (click)="handleDeleteTodo(todo.id)"

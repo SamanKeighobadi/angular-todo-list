@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TodoService } from './services/todo.service';
 
 interface ITodo {
   title: string;
@@ -10,9 +11,16 @@ interface ITodo {
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  providers: [TodoService],
 })
-export class AppComponent {
-  todos: ITodo[] = [{ id: 1, title: 'read book', completed: false }];
+export class AppComponent implements OnInit {
+  todos: ITodo[] = [];
+
+  constructor(private todoService: TodoService) {}
+
+  ngOnInit(): void {
+    this.todos = this.todoService.getTodos();
+  }
 
   addNewTodo(todo: ITodo) {
     this.todos.push(todo);

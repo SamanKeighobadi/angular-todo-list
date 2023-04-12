@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'edit-todo',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./edit-todo.component.css']
 })
 export class EditTodoComponent {
+
+  @Input() todoTitle : string = "";
 
 }

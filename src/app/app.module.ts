@@ -7,6 +7,7 @@ import { AddNewTodoComponent } from './add-new-todo/add-new-todo.component';
 import { TodosComponent } from './todos/todos.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TodoComponent } from './todo/todo.component';
+import { EditTodoComponent } from './edit-todo/edit-todo.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { TodoComponent } from './todo/todo.component';
     AddNewTodoComponent,
     TodosComponent,
     TodoComponent,
+    EditTodoComponent,
   ],
   imports: [BrowserModule, FontAwesomeModule, FormsModule],
   providers: [],
