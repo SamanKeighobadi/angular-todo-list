@@ -21,24 +21,5 @@ export class AppComponent implements OnInit {
     this.todos = this.todoService.getTodos();
   }
 
-  addNewTodo(todo: ITodo) {
-    this.todos.push(todo);
-  }
 
-  removeTodo(todoId: number) {
-    const filteredTodo = this.todos.filter((todo) => todo.id !== todoId);
-    this.todos = filteredTodo;
-  }
-
-  toggleDoneTodo(todoId: number) {
-    this.todos = this.todos.map((todo) => {
-      if (todo.id === todoId) {
-        return {
-          ...todo,
-          completed: !todo.completed,
-        };
-      }
-      return todo;
-    });
-  }
 }

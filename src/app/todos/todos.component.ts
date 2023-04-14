@@ -5,6 +5,7 @@ import {
   faEdit,
   faCheckCircle,
 } from '@fortawesome/free-solid-svg-icons';
+import { TodoService } from '../services/todo.service';
 
 interface ITodo {
   title: string;
@@ -19,29 +20,27 @@ interface ITodo {
 })
 export class TodosComponent {
   editStatus: boolean = false;
-
-  @Input() editedTodoTitle : string = '';
+  @Input() editedTodoTitle: string = '';
 
   @Input() todos: ITodo[];
 
-  @Output() deleteTodo: EventEmitter<number> = new EventEmitter<number>();
-  @Output() completeTodo: EventEmitter<number> = new EventEmitter<number>();
+
+  constructor(private todoService:TodoService) {
+    this.todos = [];
+  }
 
   handleDeleteTodo(todoId: number) {
-    this.deleteTodo.emit(todoId);
+    
+    this.todoService.deleteTodo(todoId)
   }
 
   handleCompleteTodo(todoId: number) {
-    this.completeTodo.emit(todoId);
+    this.todoService.toggleDoneTodo(todoId)
   }
 
   editHandler() {
-    console.log(this.editedTodoTitle );
-    this.editStatus = false; 
-  }
-
-  constructor() {
-    this.todos = [];
+    console.log(this.editedTodoTitle);
+    this.editStatus = false;
   }
 
   faCoffe = faCoffee;

@@ -2,5 +2,5 @@
   <add-new-todo  ></add-new-todo>
 </div>
 <div class="bg-rose-600 h-96">
-  <todos (deleteTodo)="removeTodo($event)" (completeTodo)="toggleDoneTodo($event)" [todos]="todos"></todos>
+  <todos [todos]="todos"></todos>
 </div>
